@@ -3,8 +3,7 @@
 
 <table class='table'>
   <tr>
-    <%= image_tag 'default-image.jpg' %>
-  </tr>
+  </tr><%= image_tag current_user.get_profile_image(100, 100) %>
   <tr>
     <th>name</th>
     <th><%= current_user.name %></th>

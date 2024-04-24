@@ -3,7 +3,7 @@
   <div class='container px-5 px-sm-0'>
     <div class='row'>
       <div class='col-md-3'>
-<%= render 'list'  %>
+<%= render 'list' %>
 
 
 
@@ -24,7 +24,7 @@
 </div>
 <h1>Book detail</h1>
 <th>
-            <%= image_tag 'default-image.jpg' %></th>
+            <%= image_tag @book_dil.user.get_profile_image(100, 100) %></th>
 <%= @book_dil.title %>
 
 

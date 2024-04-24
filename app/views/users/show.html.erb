@@ -17,11 +17,11 @@
           <thead>
             <tr>
               <th></th><th>
-            <%= image_tag 'default-image.jpg' %></th>
+            <%= image_tag @user.get_profile_image(100, 100) %></th>
               <th>Title</th>
-              <td><%= @user.title %></td>
+              <td><%= @user.name %></td>
               <th>Opinion</th>
-              <td><%= @user.body %></td>
+              <td><%= @user.introduction %></td>
               <th>
               <th colspan="3"></th>
             </tr>

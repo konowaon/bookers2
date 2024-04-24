@@ -6,8 +6,7 @@
         <h2>User info</h2>
 
         <table class='table'>
-          <tr>
-            <%= image_tag 'default-image.jpg' %>
+          <tr><%= image_tag current_user.get_profile_image(100, 100) %>
           </tr>
           <tr>
             <th>name</th>
