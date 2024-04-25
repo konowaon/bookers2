@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   def edit
     user = User.find(params[:id])
   unless user.id == current_user.id
-    redirect_to book_path
+    redirect_to user_path(current_user.id)
   end
-    
+
     @user = current_user
   end
 
@@ -19,11 +19,12 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   else
     render :edit
-  end 
+  end
   end
 
   def index
-    @user = User.all
+    @users = User.all
+    @user = User.find(current_user.id)
   end
 
   private

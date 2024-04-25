@@ -3,7 +3,7 @@
   <div class='container px-5 px-sm-0'>
     <div class='row'>
       <div class='col-md-3'>
-<%= render 'list' %>
+<%= render 'list', user: @book_dil.user %>
 
 
 
@@ -15,7 +15,7 @@
   <h4>Opinion</h4>
   <%= f.text_area :body %>
 
-  <%= f.submit 'Creat Book' %>
+  <%= f.submit 'Create Book' %>
 <% end %>
 </div>
       <div class='col-md-8 offset-md-1'>
@@ -24,17 +24,21 @@
 </div>
 <h1>Book detail</h1>
 <th>
-            <%= image_tag @book_dil.user.get_profile_image(100, 100) %></th>
+<%= link_to  user_path(@book_dil.user.id) do %>
+<%= image_tag @book_dil.user.get_profile_image(100, 100) %>
+<% end %>
+</th>
+
 <%= @book_dil.title %>
 
 
 <%= @book_dil.body %>
-<th><%= link_to user_path(current_user.name) %></th>
+<th><%= link_to @book_dil.user.name, user_path(@book_dil.user.id) %></th>
 
 
-
-<%= link_to "Edit", edit_book_path(@book_dil.id) %>
 <% if @book_dil.user == current_user %>
+<%= link_to "Edit", edit_book_path(@book_dil.id) %>
+
 <%= link_to "Destroy", book_path(@book_dil.id), method: :delete%>
 
   <% end %>

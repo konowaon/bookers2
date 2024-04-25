@@ -1,4 +1,4 @@
-<%= render 'list' %>
+<%= render 'list', user: @user %>
         
 <!-- form_with部分 -->
 <%= form_with model: Book.new do |f| %>
@@ -8,7 +8,7 @@
   <h4>Opinion</h4>
   <%= f.text_area :body %>
 	
-  <%= f.submit 'Creat Book' %>
+  <%= f.submit 'Create Book' %>
 <% end %>
 <main>
       </div>
@@ -17,14 +17,14 @@
         <!-- 投稿した書籍一覧表示を作成しましょう。 -->
         <table class='table table-hover table-inverse'>
           <thead>
-            <% @user.each do |user| %>
+            <% @users.each do |user| %>
             <tr>
               <th></th>
               <th>image</th>
               <%= image_tag user.get_profile_image(100, 100) %>
               <th>name</th>
               <td><%= user.name %></td>
-              <td><%= link_to "show" %></td>
+              <td><%= link_to "Show", user_path(user.id) %></td>
               <th colspan="3"></th>
             </tr>
           </thead>

@@ -3,19 +3,19 @@
 
 <table class='table'>
   <tr>
-  </tr><%= image_tag current_user.get_profile_image(100, 100) %>
+  </tr><%= image_tag user.get_profile_image(100, 100) %>
   <tr>
     <th>name</th>
-    <th><%= current_user.name %></th>
+    <th><%= user.name %></th>
   </tr>
   <tr>
     <th>introduction</th>
-    <th><%= current_user.introduction %></th>
+    <th><%= user.introduction %></th>
   </tr>
 </table>
 <div class='row'>
   <!-- 編集リンクが未実装 -->
-  <%= link_to edit_user_path(current_user),class: 'btn btn-outline-secondary btn-block' do %>
+  <%= link_to edit_user_path(user),class: 'btn btn-outline-secondary btn-block' do %>
     <i class="fas fa-user-cog"></i>
   <% end %>
   <!--<a class="btn btn-outline-secondary btn-block" href="users/(id)/edit">-->
